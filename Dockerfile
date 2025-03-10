@@ -53,8 +53,6 @@ RUN source /opt/ros/humble/setup.bash \
     && rosdep update \
     && rosdep install --from-paths src --rosdistro humble -i -y
 
-RUN git clone https://github.com/ros2/examples src/examples -b humble
-
 RUN echo "source /opt/ros/humble/setup.bash" >> /home/${USER_NAME}/.bashrc
 RUN echo "source ~/ws/install/setup.bash" >> /home/${USER_NAME}/.bashrc
 
