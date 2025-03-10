@@ -1,0 +1,26 @@
+services:
+  b4_ros2:
+    container_name: b4_ros2
+    image: b4_ros2:latest
+    build:
+      context: .
+      args:
+        - UID=${UID}
+        - GID=${GID}
+        - USER_NAME=${USER_NAME}
+        - GROUP_NAME=${GROUP_NAME}
+    environment:
+      - DISPLAY=$DISPLAY
+      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+      - $HOME/.Xauthority/:/root/.Xauthority
+      - ./src:/home/${USER_NAME}/ws/src
+    network_mode: host
+    privileged: true
+    tty: true
+    user: "${UID}:${GID}"
+    env_file:
+      - .env
