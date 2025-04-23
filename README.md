@@ -13,9 +13,13 @@ git clone --recursive https://github.com/RAIT-09/b4_ros2.git
 ## コンテナの起動
 以下のコマンドを**WSLのUbuntu上で**実行して，ROS 2コンテナを起動する．
 ```bash
-docker compose up
+docker compose up -d
 ```
-
+## コンテナ内でコマンドを実行する
+以下のコマンドを**WSLのUbuntu上で**実行して，ROS 2コンテナのBashを使用する．
+```bash
+docker exec -it b4_ros2 bash
+```
 # GUI表示
 このDockerコンテナ環境ではROS 2のGUI表示を行うため，WSLgを使用する設定を行なっている．PowerShellもしくはコマンドプロンプトで以下のコマンドを実行し，WSLgが利用可能であることを確認する．
 ```powershell
@@ -27,3 +31,6 @@ wsl --version
 ```bash
 rviz2
 ```
+
+# ターミナルの多重化
+tmuxを導入しているので，それを使用するとよい．
