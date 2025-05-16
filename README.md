@@ -4,12 +4,22 @@ ROS 2課題の環境構築に使う．
 
 # 使い方
 ## リポジトリのクローン
-以下のコマンドを使って，このリポジトリをクローンする．
+以下のコマンドを使って，このリポジトリを**WSLのUbuntu上に**クローンする．
 ```bash
 git clone --recursive https://github.com/RAIT-09/b4_ros2.git
 ```
 ## .envファイルの用意
-リポジトリに含まれる`.env.example`ファイルを`.env`に改名する．
+リポジトリに含まれる`.env.example`ファイルを`.env`としてコピーする．
+```bash
+cp .env.example .env
+```
+## Dev Containersの利用
+本リポジトリは，Visual Studio Code（以下 VS Code）のDev Containers機能を設定済である．
+
+Dev Containersとは，VS CodeにおいてDockerコンテナを用いた開発環境を容易に構築・共有するための仕組みである．
+VS Codeに「Dev Containers」拡張機能をインストールした上で，「コンテナーで再度開く（Reopen in Container）」を選択することで，指定されたDocker環境が自動的に立ち上がり，統一された開発環境が利用可能となる．
+
+なお，以下のようにコマンドライン操作によってコンテナを起動・利用することも可能であるが，基本的にはDev Containers経由での利用を推奨する．
 ## コンテナの起動
 以下のコマンドを**WSLのUbuntu上で**実行して，ROS 2コンテナを起動する．
 ```bash
