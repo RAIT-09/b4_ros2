@@ -1,0 +1,24 @@
+{
+    "name": "ROS2 Humble WSLg Dev Container",
+    "dockerComposeFile": ["../docker-compose.yaml"],
+    "service": "b4_ros2",
+
+    "workspaceFolder": "/home/${localEnv:USER}/ws",
+
+    "shutdownAction": "stopCompose",
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "terminal.integrated.cwd": "/home/${localEnv:USER}/ws"
+            },
+            "extensions": [
+                "ms-iot.vscode-ros",
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.makefile-tools"
+            ]
+        }
+    }
+}
