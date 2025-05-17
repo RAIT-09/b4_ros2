@@ -33,7 +33,8 @@ RUN apt update \
     && apt install -y --no-install-recommends \
     ros-humble-desktop \
     python3-colcon-common-extensions \
-    python3-rosdep
+    python3-rosdep \
+    '~nros-humble-rqt*'
 
 # ユーザとグループの追加
 RUN groupadd -g $GID $GROUP_NAME
