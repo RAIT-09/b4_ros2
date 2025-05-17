@@ -19,6 +19,7 @@ services:
       - $HOME/.Xauthority/:/root/.Xauthority
       - ./src:/home/${USER_NAME}/ws/src
     network_mode: host
+    ipc: host
     privileged: true
     tty: true
     user: "${UID}:${GID}"
